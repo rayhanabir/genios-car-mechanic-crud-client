@@ -3,13 +3,13 @@ import React, {useState, useEffect} from 'react';
 const ManageServices = () => {
     const [mangeService, setManageService] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/services/')
+        fetch('https://intense-castle-81130.herokuapp.com/services/')
         .then(res =>res.json())
         .then(data=>setManageService(data))
     },[]);
 
     const handleDelete = id =>{
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://intense-castle-81130.herokuapp.com/services/${id}`;
         fetch(url,{
             method:"delete"
         })
